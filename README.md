@@ -1,5 +1,5 @@
 <div align="center">
-  <h3 align="center">Anonymous Reporting App</h3>
+  <h3 align="center">Reporting App</h3>
     <div>
       <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
       <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
@@ -7,7 +7,7 @@
       <img src="https://img.shields.io/badge/-Prisma-black?style=for-the-badge&logoColor=white&logo=prisma&color=2D3748" alt="prisma" />
     </div>
    <div align="center">
-     A secure platform for anonymous incident reporting
+     A secure platform for incident reporting
     </div>
 </div>
 
@@ -22,7 +22,7 @@
 
 ## <a name="introduction">🤖 Introduction</a>
 
-This is a state-of-the-art anonymous reporting system built with Next.js 14, designed to provide a secure platform for reporting incidents while maintaining complete anonymity.
+This is a state-of-the-art reporting system built with Next.js 14, designed to provide a secure platform for reporting incidents.
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
