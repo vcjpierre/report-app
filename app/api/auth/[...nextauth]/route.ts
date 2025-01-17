@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";

@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from 'next/font/google'
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ 
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap', 
+});
 
 export const metadata: Metadata = {
   title: "TrackReport",
@@ -18,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <div className="relative min-h-screen bg-black selection:bg-sky-500/20">
           {/* Gradient Background */}
           <div className="fixed inset-0 -z-10 min-h-screen">

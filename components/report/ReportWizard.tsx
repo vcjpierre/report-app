@@ -1,30 +1,37 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
 import { ReportForm } from "./ReportForm";
 import { ReportSubmitted } from "./ReportFormCompleted";
 
+type ReportData = {
+  [key: string]: any;
+};
+
 export function ReportWizard() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [reportData, setReportData] = useState<any>(null);
+  const [reportData, setReportData] = useState<ReportData | null>(null);
 
-  const handleStepComplete = async (data: any) => {
-    setReportData({ ...reportData, ...data });
+  const handleStepComplete = async (data: ReportData) => {
+    setReportData((prev) => ({ ...prev, ...data }));
 
-    if (currentStep === 4) {
-      return;
+    if (currentStep < steps.length) {
+      setCurrentStep((prev) => prev + 1);
     }
-
-    setCurrentStep((prev) => prev + 1);
   };
+
+  const steps = [
+    <ReportForm onComplete={handleStepComplete} />,
+    reportData ? (
+      <ReportSubmitted data={reportData} onComplete={handleStepComplete} />
+    ) : (
+      <p>Loading...</p>
+    ),
+  ];
 
   return (
     <div className="rounded-2xl bg-zinc-900 p-8">
-      {currentStep === 1 && <ReportForm onComplete={handleStepComplete} />}
-      {currentStep === 2 && (
-        <ReportSubmitted data={reportData} onComplete={handleStepComplete} />
-      )}
+      {steps[currentStep - 1] ?? <p>Loading...</p>}
     </div>
   );
 }

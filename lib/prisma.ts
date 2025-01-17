@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable no-var */
 import { PrismaClient } from "@prisma/client";
 
 declare global {
