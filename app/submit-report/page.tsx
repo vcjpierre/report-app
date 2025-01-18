@@ -49,7 +49,7 @@ export default function SubmitReport() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">
-              Su seguridad es nuestra prioridad. Todos los envíos están encriptados y son anónimos.
+              Su seguridad es nuestra prioridad. Por favor, envíe un reporte de la situación de emergencia que está presenciando.
             </p>
           </div>
 

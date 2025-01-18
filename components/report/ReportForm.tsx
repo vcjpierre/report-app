@@ -5,7 +5,6 @@ import { LocationInput } from "./LocationInput";
 import crypto from "crypto";
 
 const REPORT_TYPES = [
-  "Fluctuación de voltaje",
   "Cable de alta tensión caído",
   "Daño en el transformador",
   "Colapso de poste",

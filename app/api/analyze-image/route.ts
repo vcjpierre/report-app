@@ -12,7 +12,7 @@ export async function POST(request: Request) {
 
     const prompt = `Analiza esta imagen de situación de emergencia y responda en este formato exacto sin asteriscos ni viñetas:
 TÍTULO: Escriba un título claro y breve
-TIPO: Elija uno (Fluctuación de voltaje, Cable de alta tensión caído, Daño en el transformador, Colapso de poste, Incendio eléctrico, o Otros)
+TIPO: Elija uno (Cable de alta tensión caído, Daño en el transformador, Colapso de poste, Incendio eléctrico, o Otros)
 DESCRIPCIÓN: Escriba una descripción clara y concisa`;
 
     const result = await model.generateContent([
