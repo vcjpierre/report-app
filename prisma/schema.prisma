@@ -36,12 +36,43 @@ model Report {
   @@index([reportId])
 }
 
+model Account {
+  id                 Int       @id @default(autoincrement())
+  userId             Int
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  user               User      @relation(fields: [userId], references: [id])
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           Int       @id @default(autoincrement())
+  sessionToken String    @unique
+  userId       Int
+  expires      DateTime
+  user         User      @relation(fields: [userId], references: [id])
+}
+
 model User {
   id       Int      @id @default(autoincrement())
   email    String   @unique
   name     String
   password String
   role     Role     @default(USUARIO)
+  accounts Account[]
+  sessions Session[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String    @unique
+  expires    DateTime
+  @@id([identifier, token])
 }
 
 enum Role {
